@@ -1,0 +1,24 @@
+{
+    "list": [
+        {
+            "name": "图表",
+            "children": []
+        },
+        {
+            "name": "地图",
+            "children": []
+        },
+        {
+            "name": "素材",
+            "children": []
+        },
+        {
+            "name": "信息",
+            "children": []
+        },
+        {
+            "name": "控件",
+            "children": []
+        }
+    ]
+}
