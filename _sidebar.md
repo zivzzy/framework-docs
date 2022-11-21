@@ -3,7 +3,7 @@
   - [基本介绍](项目简介/主要特性/内置功能) --何思婷
   - [系统架构](./docs/TechnicalArchitecture.md) --金博
   - [技术选型](./docs/TechnologySelection.md) --金博
-  - [接口层架构](接口层架构图/内部交互及对外接口关联描述) --郑志远（这块涉及内外接口交互非常重要，可以再拆模块 甚至单批专题）
+  - [接口层架构](./docs/InterfaceArchitecture.md) --郑志远
   - [低代码结合](./docs/releation2LowerCode.md)
 
 - 基础框架
