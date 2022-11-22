@@ -1,6 +1,6 @@
 - 概述
 
-  - [基本介绍](项目简介/主要特性/内置功能) --何思婷
+  - [基本介绍](./docs/Introduce.md)
   - [系统架构](./docs/TechnicalArchitecture.md) --金博
   - [技术选型](./docs/TechnologySelection.md) --金博
   - [接口层架构](./docs/InterfaceArchitecture.md) --郑志远
@@ -15,15 +15,15 @@
 
 - 功能模块
 
-  - [主题定制]() --何思婷/秦韶阳/郑志远
-  - [用户管理]() --何思婷/秦韶阳/郑志远
-  - [角色管理]() --何思婷/秦韶阳/郑志远
-  - [菜单管理]() --何思婷/秦韶阳/郑志远
-  - [部门管理]() --何思婷/秦韶阳/郑志远
-  - [应用管理]() --何思婷/秦韶阳/郑志远
-  - [公告管理]() --何思婷/秦韶阳/郑志远
-  - [操作权限管理]() --何思婷/秦韶阳/郑志远
-  - [日志管理]() --何思婷/秦韶阳/郑志远
+  - [主题定制](./docs/Framework.md#framework_theme)
+  - [用户管理](./docs/Users.md)
+  - [角色管理](./docs/Roles.md)
+  - [菜单管理](./docs/Menus.md)
+  - [部门管理](./docs/Department.md)
+  - [应用管理](./docs/AppMng.md)
+  - [公告管理](./docs/NoticeMng.md)
+  - [操作权限管理](./docs/OperationMng.md)
+  - [日志管理](./docs/LogMng.md)
 
 - 运维部署
 
@@ -33,6 +33,6 @@
   - [云原生架构]() --金博
 
 - 其他
-  - [对比之前框架]() --何思婷/秦韶阳
+  - [对比之前框架](./docs/Compare.md)
   - [未来规划](./docs/Future.md) --金博
-  - [参与人员]() --何思婷
+  - [参与人员](./doc/Members.md)
