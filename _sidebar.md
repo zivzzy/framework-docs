@@ -12,6 +12,7 @@
   - [核心配置](./docs/Framework.md#framework_config)
   - [主题定制平台](./docs/Framework.md#framework_theme)
   - [登录页定制](./docs/Framework.md#framework_login)
+  - [应用系统监控](./docs/SystemMonitor.md)
 
 - 功能模块
 
