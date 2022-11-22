@@ -8,10 +8,10 @@
 
 - 基础框架
 
-  - [框架基础能力](./docs/Framework.md#framework_base)
-  - [核心配置](./docs/Framework.md#framework_config)
-  - [主题定制平台](./docs/Framework.md#framework_theme)
-  - [登录页定制](./docs/Framework.md#framework_login)
+  - [框架基础能力](./docs/FrameworkBase.md)
+  - [核心配置](./docs/FrameworkConfig.md)
+  - [主题定制平台](./docs/FrameworkTheme.md)
+  - [登录页定制](./docs/FrameworkLogin.md)
 
 - 功能模块
 
