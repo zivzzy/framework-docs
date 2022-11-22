@@ -66,3 +66,80 @@ http://10.10.2.8:9091/group/181
 ###### 数据扩展
 接口层将数据分为基础数据和扩展数据，基础数据为框架提供默认能力的数据。在此基础上，增加扩展数据，满足R版本所需数据
 
+##### 规范样例
+用户信息规范示例
+```
+{
+    "userId": "1",
+    "loginId": "admin1",
+    "userName": "super admin",
+    "userStatus": "锁定",
+    "createTime": "2022-11-09T01:18:28.000Z",
+    "userEmail": "admin@boco.com.cn",
+    "userMobile": "17333333333",
+    "deptId": "1",
+    "deptName": "1"
+}
+```
+
+R版本原始数据
+```
+{
+    "id": "2819c223-7f76-453a-919d-413861904646",
+    "loginName": "Jensen",
+    "realName": "super Jensen",
+    "status": 1,
+    "createTime": "2022-11-09T01:18:28.000Z",
+    "email": "Jensen@boco.com.cn",
+    "userMobile": "17333333333",
+    "deptId": "1",
+    "deptName": "1",
+    "zoneId":"1111",
+    "zoneName":"区域名称",
+}
+```
+
+
+R版本 -> V版本代码转换方案描述
+```
+{
+    "userId": {
+        "key":"id",
+        "primary": true
+    },
+    "loginId": {
+        "key":"loginName"   
+    },
+    "userName": {
+        "key":"loginName"   
+    },
+    "userStatus": {
+        "key":"status",
+        "dic":"userStatusDic"
+    },
+    "createTime":{
+        "key":"create"
+    },
+    "userEmail": {
+        "key":"email"
+    },
+    "userPhone": "17333333333",
+    "deptId": "1",
+    "deptName": "1"
+}
+```
+
+用户信息示例
+```
+{
+  "userId":"2819c223-7f76-453a-919d-413861904646",
+  "loginId": "Jensen",
+  "userEmail":"Jensen@boco.com.cn"
+  ...
+  ...
+  "ExtendField":{
+    "zoneId":"1111",
+    "zoneName":"区域名称",
+  }
+}
+```
