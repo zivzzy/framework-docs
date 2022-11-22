@@ -30,7 +30,7 @@
   - [准备工作](./docs/Preparation.md)
   - [依赖资源](./docs/ResourceDependence.md)
   - [Nginx 配置](./docs/Nginx.md)
-  - [云原生架构]()
+  - [云原生架构](./docs/CloudNativeAppArchitecture.md)
 
 - 其他
   - [对比之前框架](./docs/Compare.md)
