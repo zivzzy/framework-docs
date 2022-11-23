@@ -33,7 +33,7 @@
 <div class='home'>
     <div class="features">
        <div class="feature">
-            <h2>功能完善</h2> 
+            <h2>功能完善</h2>
             <p>内置完整的权限架构，包括：菜单、角色、用户、字典、参数、监控、代码生成等一系列系统常规模块.</p>
         </div>
         <div class="feature">
@@ -45,6 +45,7 @@
         <div class="feature">
             <h2>快速开发</h2> <p>对常用插件进行二次封装,国际化支持,多数据源支持,完善的日志记录体系,提供可用单应用版本并保持同步更新.</p>
         </div>
+
     </div>
 </div>
 

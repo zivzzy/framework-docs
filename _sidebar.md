@@ -16,7 +16,7 @@
 
 - 功能模块
 
-  - [主题定制](./docs/Framework.md#framework_theme)
+  - [主题定制](./docs/ThemeConfig.md)
   - [用户管理](./docs/Users.md)
   - [角色管理](./docs/Roles.md)
   - [菜单管理](./docs/Menus.md)
@@ -35,5 +35,7 @@
 
 - 其他
   - [对比之前框架](./docs/Compare.md)
+
   - [未来规划](./docs/Future.md)
-  - [参与人员](./doc/Members.md)
+
+  - [参与人员](./docs/Members.md)
