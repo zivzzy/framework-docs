@@ -16,21 +16,21 @@ http {
     server {
         listen       80;
         server_name  localhost;
-		charset utf-8;
+  charset utf-8;
 
-		location / {
+  location / {
             root   /home/fedx-framework/packages/web-framework;
-			try_files $uri $uri/ /index.html;
+   try_files $uri $uri/ /index.html;
             index  index.html index.htm;
         }
-		
-		location /prod-api/ {
-			proxy_set_header Host $http_host;
-			proxy_set_header X-Real-IP $remote_addr;
-			proxy_set_header REMOTE-HOST $remote_addr;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-			proxy_pass http://localhost:8080/;
-		}
+  
+  location /prod-api/ {
+   proxy_set_header Host $http_host;
+   proxy_set_header X-Real-IP $remote_addr;
+   proxy_set_header REMOTE-HOST $remote_addr;
+   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+   proxy_pass http://localhost:8080/;
+  }
 
         error_page   500 502 503 504  /50x.html;
         location = /50x.html {
@@ -41,6 +41,7 @@ http {
 ```
 
 # 建议开启Gzip压缩
+
 在http配置中加入如下代码对全局的资源进行压缩，可以减少文件体积和加快网页访问速度。
 
 ```
