@@ -10,7 +10,7 @@
 
   - [框架基础能力](./docs/FrameworkBase.md)
   - [核心配置](./docs/FrameworkConfig.md)
-  - [主题定制平台](./docs/FrameworkTheme.md)
+  - [主题动态切换](./docs/FrameworkTheme.md)
   - [登录页定制](./docs/FrameworkLogin.md)
   - [应用系统监控](./docs/SystemMonitor.md)
 
