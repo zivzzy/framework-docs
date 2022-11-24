@@ -13,6 +13,7 @@
   - [主题定制平台](./docs/FrameworkTheme.md)
   - [登录页定制](./docs/FrameworkLogin.md)
   - [应用系统监控](./docs/SystemMonitor.md)
+  - [微应用](./docs/MicroApp.md)
 
 - 功能模块
 
