@@ -66,3 +66,60 @@ props.onGlobalStateChange((value) => {
     setSystemInfo(value.systemInfo);
 }, true);
 ```
+
+
+<b>共享内容介绍：</b>
+
+- 框架为微应用提供数据共享能力，以下内容为数据共享的内容，同时用户可自行对共享内容进行扩展,扩展字段将保存在ExtendField字段内，微应用可根据需要从中获取可用信息。 
+
+用户信息  
+
+| 参数名 | 参数值 | 类型 |  描述 | 是否必须 |
+| --- | --- | --- |--- | --- |
+| userId | {userId} | string | 用户唯一标识 | 是 |
+| loginId | {loginId} | string | 登录名 | 是 |
+| userName | {userName} | string |用户名 | 是 |
+| userEmail | {userEmail} | string |邮箱 | 是 |
+| userMobile | {userMobile} | string | 手机号 | 是 |
+| deptId | {deptId} | string | 部门 | 否 |
+| isAdmin | {isAdmin} | boolean | 是否是管理员 | 是 |
+| isSuperAdmin | {isSuperAdmin} | boolean | 是否是超级管理员 | 否 |
+| operationsButton | {operationsButton} | Array< operationsButton > | 按钮权限 | 是 |
+| extendField | {extendField} | Object | 扩展字段 | 否 |  
+
+
+按钮信息 --operationsButton  
+
+| 参数名 | 参数值 | 类型 |  描述 | 是否必须 |
+| --- | --- | --- |--- | --- |
+| operId | {operId} | string | 按钮标识 |
+| key | {key} | string | 按钮key值，做为系统 |
+
+
+共享数据示例
+
+```
+{
+    "userId": "0",
+    "loginId": "admin",
+    "userName": "Admin",
+    "userStatus": 1,
+    "createTime": "2022-11-25T07:04:35.000Z",
+    "deletedTime": null,
+    "userEmail": "admin@boco.com.cn",
+    "userMobile": "185xxxxxxxx",
+    "deptId": "1",
+    "isAdmin": true,
+    "isSuperAdmin": true,
+    "operationsButton": [
+        {
+            "operId": "string",
+            "key": "string"
+        }
+    ]
+    "extendField":
+    {
+        "zones":[]
+    }
+}
+```
