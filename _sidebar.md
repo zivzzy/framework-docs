@@ -24,6 +24,7 @@
   - [菜单管理](./docs/Menus.md)
   - [部门管理](./docs/Department.md)
   - [应用管理](./docs/AppMng.md)
+  - [模块管理](./docs/ModuleMng.md)
   - [公告管理](./docs/NoticeMng.md)
   - [操作权限管理](./docs/OperationMng.md)
   - [日志管理](./docs/LogMng.md)
