@@ -3,7 +3,7 @@
   - [基本介绍](./docs/Introduce.md)
   - [系统架构](./docs/TechnicalArchitecture.md)
   - [技术选型](./docs/TechnologySelection.md)
-  - [接口层架构](./docs/InterfaceArchitecture.md)
+  - [接入层架构](./docs/InterfaceArchitecture.md)
   - [低代码结合](./docs/releation2LowerCode.md)
 
 - 基础框架
