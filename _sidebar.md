@@ -5,6 +5,7 @@
   - [技术选型](./docs/TechnologySelection.md)
   - [接入层架构](./docs/InterfaceArchitecture.md)
   - [低代码结合](./docs/releation2LowerCode.md)
+  - [统一的接口规范](./docs/InterfaceSpecifications.md)
 
 - 基础框架
 
