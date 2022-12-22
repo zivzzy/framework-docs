@@ -17,15 +17,15 @@
 - 功能模块
 
   - [主题定制](./docs/ThemeConfig.md)
-  - [用户管理](./docs/Users.md)
-  - [角色管理](./docs/Roles.md)
-  - [菜单管理](./docs/Menus.md)
-  - [部门管理](./docs/Department.md)
   - [应用管理](./docs/AppMng.md)
   - [模块管理](./docs/ModuleMng.md)
   - [公告管理](./docs/NoticeMng.md)
-  - [操作权限管理](./docs/OperationMng.md)
   - [日志管理](./docs/LogMng.md)
+  - [菜单管理](./docs/Menus.md)
+  - [操作权限管理](./docs/OperationMng.md)
+  - [用户管理](./docs/Users.md)
+  - [角色管理](./docs/Roles.md)
+  - [部门管理](./docs/Department.md)
 
 - 运维部署
 
