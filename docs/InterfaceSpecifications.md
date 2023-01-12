@@ -121,6 +121,8 @@
     // 返回成功 为 0 其他为异常情况
     int SUCCESS = 0;
 
+    // 自定义code码举例
+
     //请求参数错误
     int ERR_INVALID_REQ_PARAM = 110000;
 
