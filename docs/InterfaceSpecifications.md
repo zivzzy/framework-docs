@@ -6,7 +6,6 @@
 
 - [基础约定](#1-基础约定)
 
-
 # 规范内容
 
 ## 1. 基础约定
@@ -19,44 +18,43 @@
 
 注意：一个产品无论后端有多少个服务组成也应该只有一个 API 入口
 
-#### 1.2 接口路径以 `api/aa-bb/cc-dd` 方式命名
+#### 1.2 接口路径以驼峰式 `api/taskGroups` 方式命名
 
-正确：`/api/task-groups`
+正确：`/api/taskGroups`
 
-错误：`/api/taskGroups`
+错误：`/api/task-groups`
 
-#### 1.3 接口路径使用资源名词而非动词，动作应由 HTTP Method 体现，资源组可以进行逻辑嵌套
+#### 1.3 (推荐)接口路径使用资源名词而非动词，动作应由 HTTP Method 体现（在 Method 受限（只能使用 get/post）的场合除外），资源组可以进行逻辑嵌套
 
-正确：POST `/api/tasks` 或 `/api/task-groups/1/tasks` 表示在 id 为 1 的任务组下创建任务
+正确：POST `/api/tasks` 或 `/api/taskGroups/1/tasks` 表示在 id 为 1 的任务组下创建任务
 
 错误：POST `/api/create-task`
 
-#### 1.4 接口路径中的资源使用复数而非单数
+#### 1.4 (推荐)接口路径中的资源使用复数而非单数
 
 正确：`/api/tasks`
 
 错误：`/api/task`
 
-#### 1.5 接口设计面向开放接口，而非单纯前端业务
+#### 1.5 (推荐)接口设计面向开放接口，而非单纯前端业务
 
 要求我们在给接口路径命名时要面向通用业务而非单纯前端业务，以获取筛选表单中的任务字段下拉选项为例
 
 正确：`/api/tasks`
 
-错误：`/api/task-select-options`
+错误：`/api/taskSelectOptions`
 
 虽然这个接口暂时只用在表单的下拉选择中，但是需要考虑的是在未来可能会被用在任意场景，因此应以更通用方式提供接口交由客户端自由组合
 
-#### 1.6 规范使用 HTTP 方法
+#### 1.6 （推荐）规范使用 HTTP 方法（可以只使用 get/post 请求，接口路径使用动词）
 
-| 方法   | 场景         | 例如                                                     |
-| ------ | ------------ | -------------------------------------------------------- |
-| GET    | 获取数据     | 获取单个：GET `/api/tasks/1`、获取列表：GET `/api/tasks` |
-| POST   | 创建数据     | 创建单个：POST `/api/tasks`                              |
-| PATCH  | 差量修改数据 | 修改单个：PATCH `/api/tasks/1`                           |
-| PUT    | 全量修改数据 | 修改单个：PUT `/api/tasks/1`                             |
-| DELETE | 删除数据     | 删除单个：DELETE `/api/tasks/1`                          |
-
+| 方法         | 场景         | 例如                                                     |
+| ------------ | ------------ | -------------------------------------------------------- |
+| GET（推荐）  | 获取数据     | 获取单个：GET `/api/tasks/1`、获取列表：GET `/api/tasks` |
+| POST（推荐） | 创建数据     | 创建单个：POST `/api/tasks`                              |
+| PATCH        | 差量修改数据 | 修改单个：PATCH `/api/tasks/1`                           |
+| PUT          | 全量修改数据 | 修改单个：PUT `/api/tasks/1`                             |
+| DELETE       | 删除数据     | 删除单个：DELETE `/api/tasks/1`                          |
 
 #### 1.7 规范使用 HTTP 状态码
 
@@ -78,13 +76,13 @@
 
   ```javascript
   {
-    code: 200,
-    status: 200,
-    message: "请求成功",
-    data: {
-      id: 1,
-      name: '任务 1'
-    }
+      code: 200,
+      status: 200,
+      message: "请求成功",
+      data: {
+          id: 1,
+          name: '任务 1'
+      }
   }
   ```
 
@@ -92,21 +90,22 @@
 
   ```javascript
   {
-    code: 200,
-    status: 200,
-    message: "请求成功",
-    data: {
-      items: [{
-        id: 1,
-        name: '任务 1'
-      }, {
-        id: 2,
-        name: '任务 2'
-      }],
-      total: 2,
-      pageSize:1,
-      pageNumber:2,
-    }
+      code: 200,
+      status: 200,
+      message: "请求成功",
+      // 内容自定义
+      data: {
+          items: [{
+              id: 1,
+              name: '任务 1'
+          }, {
+              id: 2,
+              name: '任务 2'
+          }],
+          total: 2,
+          pageSize:1,
+          pageNumber:2,
+      }
   }
   ```
 
@@ -114,10 +113,13 @@
 
 > 尽管在响应体中体现了响应状态码，但这并不代表所有 HTTP 就可以全部返回 200 了，无论如何请在条件允许范围内尽可能使用标准的 HTTP 响应状态码
 
-#### 1.9 code码(业务编码)定义样例  
+#### 1.9 code 码(业务编码)定义样例
+
+内置 `code` 码取值区间为 0-999，1000(含)以上为自定义`code`码。
 
 ```
-    int SUCCESS = 200;
+    // 返回成功 为 0 其他为异常情况
+    int SUCCESS = 0;
 
     //请求参数错误
     int ERR_INVALID_REQ_PARAM = 110000;
@@ -161,7 +163,7 @@
     //更新错误
     int UPDATE_ERR = 110110;
 
-```  
+```
 
 #### 1.10 请求和响应字段采用 `aaBbCc` 驼峰方式命名
 
@@ -181,11 +183,8 @@
 #### 1.11 常见业务字段约定
 
 名称：name
-
 状态：status
-
 创建时间：createdAt
-
 更新时间：updatedAt
 
 #### 1.12 空数组使用 []，而不是 null
@@ -193,23 +192,23 @@
 ```javascript
 // 正确
 {
-  code: 200,
-  status: 200,
-  message: "请求成功",
-  data: {
-    id: 1,
-    roleIds: [],
-  }
+    code: 200,
+    status: 200,
+    message: "请求成功",
+    data: {
+        id: 1,
+        roleIds: [],
+    }
 }
 // 错误
 {
-  code: 200,
-  status: 200,
-  message: "请求成功",
-  data: {
-    id: 1,
-    roleIds: null
-  }
+    code: 200,
+    status: 200,
+    message: "请求成功",
+    data: {
+        id: 1,
+        roleIds: null
+    }
 }
 ```
 
@@ -218,26 +217,26 @@
 ```javascript
 // 正确
 {
-  code: 200,
-  status: 200,
-  message: "请求成功",
-  data: {
-    roles: [{
-      id: 1,
-      name: '角色 1'
-    }, {
-      id: 2,
-      name: '角色 2'
-    }]
-  }
+    code: 200,
+    status: 200,
+    message: "请求成功",
+    data: {
+        roles: [{
+            id: 1,
+            name: '角色 1'
+        }, {
+            id: 2,
+            name: '角色 2'
+        }]
+    }
 }
 // 错误
 {
-  code: 200,
-  status: 200,
-  message: "请求成功",
-  data: {
-    roles: '[{"id":1,"name":"角色 1"},{"id":2,"name":"角色 2"}]'
-  }
+    code: 200,
+    status: 200,
+    message: "请求成功",
+    data: {
+        roles: '[{"id":1,"name":"角色 1"},{"id":2,"name":"角色 2"}]'
+    }
 }
 ```
