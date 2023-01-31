@@ -51,9 +51,9 @@
 
 - 研发规范
 
-  - [编码规范](./docs/low-code/coding-style.md)
-  - [接口规范](./docs/low-code/api-style.md)
-  - [项目配置规范](./docs/low-code/eslint-config.md)
+  - [编码规范](./docs/standard/coding-style.md)
+  - [接口规范](./docs/standard/api-style.md)
+  - [项目配置规范](./docs/standard/eslint-config.md)
 
 - 其他
   - [未来规划](./docs/other/future.md)
